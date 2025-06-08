@@ -24,6 +24,7 @@ use App\Http\Controllers\Mahasiswa\PenilaianController;
 use App\Models\LogAktivitas;
 use FontLib\Table\Type\name;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,22 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::get('/', function () {
+    if (!Auth::check()) {
+        return redirect()->route('login.index');
+    } else if (Auth::user()->role == 'admin') {
+        return redirect()->route('admin.dashboard');
+    } else if (Auth::user()->role == 'dosen') {
+        return redirect()->route('dosen.dashboard');
+    } else if (Auth::user()->role == 'mahasiswa') {
+        return redirect()->route('mahasiswa.dashboard');
+    } else {
+        return redirect()->route('login.index');
+    }
+
+    // User is authenticated — go to dashboard or home
+});
 
 Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
