@@ -37,12 +37,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('admin.pages.dashboard.index', [
-        'title' => 'Dashboard'
-    ]);
-})->name('dashboard');
-
 Route::get('/login', [AuthController::class, 'indexLogin'])->name('login.index');
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
