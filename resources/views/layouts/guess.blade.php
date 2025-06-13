@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/fonts/fontawesome-all.min.css') }}">
     <style>
         .bg-gradient-primary {
-            background-color: #1E3A8A !important;
-            background-image: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            background-color: #161b2d !important;
+            background-image: linear-gradient(135deg, #161b2d 0%, #27335f 100%);
             background-size: cover !important;
             background-position: center center !important;
             background-repeat: no-repeat !important;

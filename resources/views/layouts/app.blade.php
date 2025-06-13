@@ -17,8 +17,8 @@
 
     <style>
         .bg-gradient-primary {
-            background-color: #1E3A8A !important;
-            background-image: linear-gradient(135deg, #1E3A8A 0%, #3B82F6 100%);
+            background-color: #161b2d !important;
+            background-image: linear-gradient(135deg, #161b2d 0%, #27335f 100%);
         }
 
         .sidebar {
@@ -43,7 +43,7 @@
 
         /* Active state */
         .nav-link.active {
-            background-color: #5d7fdd;
+            background-color: rgb(39, 51, 95);
             color: #ffffff !important;
             font-weight: bold;
             border-left: 4px solid #ffffff;
@@ -52,7 +52,7 @@
 
         /* Hover effect */
         .nav-link:hover {
-            background-color: rgba(30, 58, 138, .5);
+            background-color: rgba(39, 51, 95, .5);
             color: #ffffff !important;
         }
     </style>
