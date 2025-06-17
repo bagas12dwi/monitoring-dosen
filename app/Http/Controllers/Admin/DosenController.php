@@ -21,7 +21,7 @@ class DosenController extends Controller
         $this->route = 'admin.dosen.index';
         $this->validationRules = [
             'nama' => 'required',
-            'nim' => 'required|unique:users,nim',
+            'nim' => 'required',
             'angkatan' => 'nullable',
             'role' => 'nullable',
             'password' => 'required'

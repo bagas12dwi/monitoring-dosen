@@ -21,7 +21,7 @@ class MahasiswaController extends Controller
         $this->route = 'admin.mahasiswa.index';
         $this->validationRules = [
             'nama' => 'required',
-            'nim' => 'required|unique:users,nim',
+            'nim' => 'required',
             'angkatan' => 'nullable',
             'role' => 'nullable',
             'password' => 'required'

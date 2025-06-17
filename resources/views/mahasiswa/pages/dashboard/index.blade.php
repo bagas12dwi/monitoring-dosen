@@ -90,6 +90,11 @@
                             </div>
                         </div>
                     @empty
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="card-title text-center">Tidak Ada Perkuliahan</div>
+                            </div>
+                        </div>
                     @endforelse
                 </div>
             </div>

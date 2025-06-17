@@ -32,10 +32,10 @@
             </div>
             <div class="card-body">
                 <form id="form-pengguna"
-                    action="{{ isset($mahasiswa) ? route('admin.dosen.update', $mahasiswa->id) : route('admin.dosen.store') }}"
+                    action="{{ isset($dosen) ? route('admin.dosen.update', $dosen->id) : route('admin.dosen.store') }}"
                     method="post">
                     @csrf
-                    @isset($mahasiswa)
+                    @isset($dosen)
                         @method('PUT')
                     @endisset
                     <div class="row">
@@ -43,12 +43,12 @@
                             <div class="mb-3">
                                 <label for="nim" class="form-label">NIP</label>
                                 <input type="number" class="form-control" name="nim" id="nim"
-                                    placeholder="Masukkan NIP" value="{{ old('nim', $mahasiswa->nim ?? '') }}" />
+                                    placeholder="Masukkan NIP" value="{{ old('nim', $dosen->nim ?? '') }}" />
                             </div>
                             <div class="mb-3">
                                 <label for="nama" class="form-label">Nama</label>
                                 <input type="text" class="form-control" name="nama" id="nama"
-                                    placeholder="Masukkan Nama" value="{{ old('nama', $mahasiswa->nama ?? '') }}" />
+                                    placeholder="Masukkan Nama" value="{{ old('nama', $dosen->nama ?? '') }}" />
                             </div>
                             <input type="hidden" value="dosen" id="role" name="role">
                         </div>

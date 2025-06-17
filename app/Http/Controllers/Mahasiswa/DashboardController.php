@@ -53,11 +53,7 @@ class DashboardController extends Controller
         // Filter dosen unik
         $dosen = $allDosens->unique('id')->values();
 
-        $perkuliahan = KelasMahasiswa::with(['perkuliahan' => function ($q) {
-            $q->whereHas('semester', function ($query) {
-                $query->where('aktif', true);
-            });
-        }, 'perkuliahan.dosen'])->where('mahasiswa_id', $mahasiswaId)->get();
+        $perkuliahan = KelasMahasiswa::with(['perkuliahan', 'perkuliahan.dosen'])->where('mahasiswa_id', $mahasiswaId)->where('semester_id', $semesterAktif->id)->get();
 
         return view(
             'mahasiswa.pages.dashboard.index',
